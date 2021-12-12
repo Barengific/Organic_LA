@@ -2,7 +2,8 @@ package com.barengific.bgaj;
 
 public class Chromosome {
     String chromosome;
-    int cSize;
+    int nGenes;
+    int geneSize;
     int cRating;
 
     public String getChromosome() {
@@ -13,12 +14,12 @@ public class Chromosome {
         this.chromosome = chromosome;
     }
 
-    public int getcSize() {
-        return cSize;
+    public int getGeneSize() {
+        return geneSize;
     }
 
-    public void setcSize(int cSize) {
-        this.cSize = cSize;
+    public void setGeneSize(int geneSize) {
+        this.geneSize = geneSize;
     }
 
     public int getcRating() {
@@ -29,6 +30,13 @@ public class Chromosome {
         this.cRating = cRating;
     }
 
-    //TODO convert chromosome to decinal value
+    public int getnGenes() {
+        return nGenes;
+    }
+
+    public void setnGenes(int nGenes) {
+        this.nGenes = nGenes;
+    }
+    //TODO convert chromosome to decimal value
 
 }
