@@ -45,12 +45,7 @@ public class Main extends Application {
     }
 
     static double encoding() {
-        double temp1 = xHi - xLo;
-        double temp2 = Math.pow(10, -precision);
-        double temp3 = (temp1 / temp2) + 1;
-        double temp4 = Math.log(temp3)/Math.log(2);
-        return temp4;
-
+        return Math.round(Math.log((((xHi - xLo)/(Math.pow(10, -precision))) + 1))/Math.log(2));
     }
 
     void initPop() {
