@@ -22,8 +22,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        int a = (int)Math.random();
-        System.out.println(a);
 
     }
 
@@ -45,29 +43,5 @@ public class Main extends Application {
         }
         System.out.println(qq.toString());
     }
-
-    int chromosome2Rating(String sChromosome){
-        return Integer.parseInt(sChromosome, 2);
-    }
-
-    String rating2Chromosome(int iChromosome){
-        return Integer.toBinaryString(iChromosome);
-    }
-
-    ArrayList<String> matingSelection(ArrayList<String> a){
-        //TODO come up with different algorithms to find mates for the chromosomes
-        return null;
-    }
-
-    ArrayList<String> reproduction(ArrayList<String> a){
-        //TODO different algorithms to find generate new chromosomes
-        return null;
-    }
-
-    ArrayList<String> mutation(ArrayList<String> a){
-        //TODO different algorithms to mutate the chromosomes
-        return null;
-    }
-
 
 }
