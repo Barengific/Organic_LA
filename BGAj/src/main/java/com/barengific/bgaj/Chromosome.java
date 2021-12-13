@@ -1,8 +1,19 @@
 package com.barengific.bgaj;
 
-public class Chromosome {
+import java.util.ArrayList;
+
+public class Chromosome extends Gene{
+    ArrayList<Gene> genes;
     String chromosome;
     int cRating;
+
+    public Chromosome() {
+    }
+
+    public Chromosome(String chromosome, int cRating) {
+        this.chromosome = chromosome;
+        this.cRating = cRating;
+    }
 
     public String getChromosome() {
         return chromosome;
@@ -19,7 +30,6 @@ public class Chromosome {
     public void setcRating(int cRating) {
         this.cRating = cRating;
     }
-
     //TODO convert chromosome to decimal value
 
 }
