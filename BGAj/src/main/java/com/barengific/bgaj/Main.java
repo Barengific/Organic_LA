@@ -24,7 +24,8 @@ public class Main extends Application {
     double Cn;
     double u;
     static int precision;
-
+    Chromosome cs = new Chromosome();
+    ArrayList<Chromosome> pop = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -41,31 +42,36 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
     }
 
     static double encoding() {
         return Math.round(Math.log((((xHi - xLo)/(Math.pow(10, -precision))) + 1))/Math.log(2));
     }
 
-    void initPop() {
-        int cSize = 10;
-        int pSize = 20;
-        Population pop = new Population();
-        Chromosome cs = new Chromosome();
-        ArrayList<String> qq = new ArrayList<>();
+    static double decoding(){
+        return xLo + bin2int("")*((xHi-xLo)/Math.pow(2,encoding())-1);
+    }
 
-        for (int i = 0; i < pSize; i++) {
+    static int bin2int(String binary){
+        return Integer.parseInt(binary,2);
+    }
+
+    static String int2bin(int decimal){
+        return Integer.toBinaryString(10);
+    }
+
+    void initPop( ) {
+        ArrayList<String> population = new ArrayList<>();
+        for (int i = 0; i < nPop; i++) {
             cs.setChromosome("");
-            for (int j = 0; j < cSize; j++) {
+            for (int j = 0; j < nBits; j++) {
                 double b = Math.random();
                 long a = Math.round(b);
                 cs.setChromosome(cs.getChromosome() + Long.toString(a));
             }
-            qq.add(cs.getChromosome());
+            population.add(cs.getChromosome());
         }
-        System.out.println(qq.toString());
+        System.out.println(population.toString());
     }
-
 
 }
